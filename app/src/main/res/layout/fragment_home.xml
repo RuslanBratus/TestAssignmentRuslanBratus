@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white_background"
+    android:paddingHorizontal="@dimen/margin_padding_size_16"
+    android:paddingTop="@dimen/margin_padding_size_2"
+    tools:context=".presentation.home.HomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/margin_padding_size_8">
+
+            <TextView
+                android:id="@+id/tvMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_extrabold"
+                android:text="@string/money"
+                android:textColor="@color/neutral800"
+                android:textSize="@dimen/text_size_32"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageView
+                android:id="@+id/ivBank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_padding_size_22"
+                android:src="@drawable/ic_bank"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvMoney"
+                app:layout_constraintBottom_toBottomOf="@id/tvMoney"/>
+
+            <ImageView
+                android:id="@+id/ivPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_padding_size_22"
+                android:src="@drawable/ic_plus"
+                app:layout_constraintEnd_toStartOf="@id/ivBank"
+                app:layout_constraintTop_toTopOf="@id/tvMoney"
+                app:layout_constraintBottom_toBottomOf="@id/tvMoney"/>
+
+            <View
+                android:id="@+id/vTopLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/neutral200"
+                app:layout_constraintTop_toBottomOf="@id/tvMoney"
+                android:layout_marginTop="@dimen/margin_padding_size_8"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/margin_padding_size_24"
+                app:layout_constraintTop_toBottomOf="@id/vTopLine">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/neutral0_oval_shape"
+                    android:padding="@dimen/margin_padding_size_16">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:textColor="@color/neutral900"
+                        android:textSize="@dimen/text_size_16"
+                        android:text="USD account"
+                        android:drawableStart="@drawable/ic_flag_usa"
+                        android:drawablePadding="@dimen/margin_padding_size_8"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$100,000"
+                        android:textColor="@color/neutral900"
+                        android:textSize="@dimen/text_size_28"
+                        android:fontFamily="@font/inter_extrabold"
+                        android:layout_marginTop="@dimen/margin_padding_size_8"/>
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/neutral0_oval_shape"
+                    android:paddingTop="@dimen/margin_padding_size_16"
+                    android:layout_marginTop="@dimen/margin_padding_size_16">
+
+                    <TextView
+                        android:id="@+id/tvMyCards"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textSize="@dimen/text_size_16"
+                        android:textColor="@color/neutral800"
+                        android:text="@string/my_cards"
+                        android:layout_marginStart="@dimen/margin_padding_size_16"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textSize="@dimen/text_size_14"
+                        android:textColor="@color/neutral800"
+                        android:text="@string/see_all"
+                        android:layout_marginEnd="@dimen/margin_padding_size_14"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvMyCards"
+                        app:layout_constraintBottom_toBottomOf="@id/tvMyCards"/>
+                    
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvCards"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/item_home_card"
+                        tools:itemCount="3"
+                        app:layout_constraintTop_toBottomOf="@id/tvMyCards"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:layout_marginTop="@dimen/margin_padding_size_12"
+                        android:layout_marginStart="@dimen/margin_padding_size_6"
+                        android:paddingBottom="@dimen/margin_padding_size_6"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/neutral0_oval_shape"
+                    android:paddingTop="@dimen/margin_padding_size_16"
+                    android:layout_marginTop="@dimen/margin_padding_size_16">
+
+                    <TextView
+                        android:id="@+id/tvRecentTransactions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textSize="@dimen/text_size_16"
+                        android:textColor="@color/neutral800"
+                        android:text="@string/recent_transactions"
+                        android:layout_marginStart="@dimen/margin_padding_size_16"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textSize="@dimen/text_size_14"
+                        android:textColor="@color/neutral800"
+                        android:text="@string/see_all"
+                        android:layout_marginEnd="@dimen/margin_padding_size_14"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvRecentTransactions"
+                        app:layout_constraintBottom_toBottomOf="@id/tvRecentTransactions"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvTransactions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/item_home_transaction"
+                        tools:itemCount="3"
+                        app:layout_constraintTop_toBottomOf="@id/tvRecentTransactions"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:layout_marginTop="@dimen/margin_padding_size_12"
+                        android:layout_marginStart="@dimen/margin_padding_size_6"
+                        android:paddingBottom="@dimen/margin_padding_size_6"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</FrameLayout>

@@ -1,0 +1,32 @@
+<resources>
+
+    <!-- Errors -->
+    <string name="error_unknown">Oops, something went wrong</string>
+    <string name="error_bad_request">Bad request</string>
+    <string name="error_user_not_exist">Current user not exist</string>
+    <string name="error_internal_server_error">We have an internal server error</string>
+
+    <!-- HomeFragment -->
+    <string name="money">Money</string>
+    <string name="see_all"><u>See All</u></string>
+    <string name="recent_transactions">Recent transactions</string>
+
+
+    <string name="app_name">TestAssignmentRuslanBratus</string>
+    <string name="home">Home</string>
+    <string name="transactions">Transactions</string>
+    <string name="my_cards">My Cards</string>
+    <string name="account">Account</string>
+    <string name="error_internet_connection">No Internet connection. Please try again when the access is restored.</string>
+    <string name="action_try_again">Try Again</string>
+
+    <string name="transaction_lst4_placeholder">••%1$s</string>
+    <string name="transaction_minus_amount_placeholder">-$%1$.2f</string>
+    <string name="transaction_plus_amount_placeholder">$%1$.2f</string>
+    <string name="arg_card_id">CardId</string>
+    <string name="lock">Lock</string>
+    <string name="details">Details</string>
+    <string name="terminate">Terminate</string>
+    <string name="activity">Activity</string>
+    <string name="declined">Declined</string>
+</resources>

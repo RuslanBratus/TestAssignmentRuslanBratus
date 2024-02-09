@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BottomNavigation">
+        <item name="itemTextAppearanceActive">@style/BottomNavigation.ActiveItemTextAppearance
+        </item>
+        <item name="itemTextAppearanceInactive">@style/BottomNavigation.ActiveItemTextAppearance
+        </item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="android:paddingBottom">@dimen/margin_padding_size_10</item>
+    </style>
+
+    <style name="BottomNavigation.ActiveItemTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_12</item>
+    </style>
+
+    <style name="CardsTextStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_padding_size_20</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="android:textColor">@color/neutral800</item>
+        <item name="android:textSize">@dimen/text_size_24</item>
+        <item name="android:gravity">center|start</item>
+        <item name="android:paddingEnd">@dimen/margin_padding_size_16</item>
+        <item name="drawableEndCompat">@drawable/ic_polygon_right</item>
+    </style>
+</resources>

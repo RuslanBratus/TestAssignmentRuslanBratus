@@ -1,0 +1,127 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.dagger.hilt.android'
+}
+
+android {
+    namespace 'com.example.testassignment'
+    compileSdk 34
+
+    def trueValue = "true"
+    def falseValue = "false"
+
+    def ENABLE_LOGS = "ENABLE_LOGS"
+    def ENABLE_CRASH_LOGS = "ENABLE_CRASH_LOGS"
+    def HOST = "HOST"
+
+    def Boolean = "Boolean"
+    def String = "String"
+
+    def devHost = '"https://dev.spendbase.co/"'
+    def stagingHost = '"https://dev.spendbase.co/"'
+    def prodHost = '"https://dev.spendbase.co/"'
+
+    defaultConfig {
+        applicationId "com.example.testassignment"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+
+    signingConfigs {
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            versionNameSuffix ""
+            buildConfigField Boolean, ENABLE_LOGS, falseValue
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            versionNameSuffix ".debug"
+        }
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+        dev {
+            buildConfigField String, HOST, devHost
+            buildConfigField Boolean, ENABLE_LOGS, trueValue
+            buildConfigField Boolean, ENABLE_CRASH_LOGS, falseValue
+        }
+
+        staging {
+            buildConfigField String, HOST, stagingHost
+            buildConfigField Boolean, ENABLE_LOGS, trueValue
+            buildConfigField Boolean, ENABLE_CRASH_LOGS, trueValue
+        }
+
+        production {
+            buildConfigField String, HOST, prodHost
+            buildConfigField Boolean, ENABLE_LOGS, falseValue
+            buildConfigField Boolean, ENABLE_CRASH_LOGS, trueValue
+        }
+    }
+}
+
+dependencies {
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$retrofit_adapter_version"
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+
+    // required to avoid crash on Android 12 API 31
+    implementation 'androidx.work:work-runtime-ktx:2.7.1'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //Hilt (including Dagger)
+    implementation 'com.google.dagger:hilt-android:2.47'
+    kapt 'com.google.dagger:hilt-compiler:2.47'
+    kapt 'androidx.hilt:hilt-compiler:1.0.0'
+    implementation 'androidx.hilt:hilt-work:1.0.0'
+
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment:2.7.6'
+    implementation "androidx.navigation:navigation-ui-ktx:2.7.6"
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue500">#1460f3</color>
+    <color name="neutral0">#FFFFFFFF</color>
+    <color name="neutral50">#F6F7F9</color>
+    <color name="neutral200">#E7E9EB</color>
+    <color name="neutral400">#B3B6BE</color>
+    <color name="neutral500">#7E8493</color>
+    <color name="neutral800">#2B2C39</color>
+    <color name="neutral900">#21222E</color>
+    <color name="red500">#EC5454</color>
+    <color name="white_background">#F6F7F9</color>
+</resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clItemCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/vLogoBackground"
+        android:layout_width="@dimen/transaction_logo_background_size"
+        android:layout_height="@dimen/transaction_logo_background_size"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/neutral50_circle_shape"
+        android:layout_marginTop="@dimen/margin_padding_size_6"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/transaction_logo_size"
+        android:layout_height="@dimen/transaction_logo_size"
+        app:cardCornerRadius="@dimen/corner_radius_90"
+        android:backgroundTint="@null"
+        android:foregroundTint="@null"
+        android:elevation="0dp"
+        app:layout_constraintTop_toTopOf="@id/vLogoBackground"
+        app:layout_constraintBottom_toBottomOf="@id/vLogoBackground"
+        app:layout_constraintStart_toStartOf="@id/vLogoBackground"
+        app:layout_constraintEnd_toEndOf="@id/vLogoBackground">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="@dimen/transaction_logo_size"
+            android:layout_height="@dimen/transaction_logo_size"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvCardLast4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/neutral500"
+        android:textSize="@dimen/text_size_10"
+        android:fontFamily="@font/inter_semibold"
+        app:layout_constraintTop_toBottomOf="@id/tvCardName"
+        app:layout_constraintStart_toStartOf="@id/tvCardName"/>
+
+
+    <TextView
+        android:id="@+id/tvCardName"
+        android:fontFamily="@font/inter_medium"
+        android:textColor="@color/neutral800"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:textSize="@dimen/text_size_16"
+        app:layout_constraintTop_toTopOf="@id/vLogoBackground"
+        app:layout_constraintStart_toEndOf="@id/vLogoBackground"
+        android:layout_marginStart="@dimen/margin_padding_size_12"/>
+    
+    <ImageView
+        android:id="@+id/ivTransactionResultIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_successful_transaction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/vLogoBackground"
+        app:layout_constraintBottom_toBottomOf="@id/vLogoBackground"/>
+
+    <TextView
+        android:id="@+id/tvAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/neutral800"
+        android:fontFamily="@font/inter_medium"
+        android:textSize="@dimen/text_size_16"
+        android:layout_marginEnd="@dimen/margin_padding_size_12"
+        app:layout_constraintEnd_toStartOf="@id/ivTransactionResultIcon"
+        app:layout_constraintTop_toTopOf="@id/ivTransactionResultIcon"
+        app:layout_constraintBottom_toBottomOf="@id/ivTransactionResultIcon"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

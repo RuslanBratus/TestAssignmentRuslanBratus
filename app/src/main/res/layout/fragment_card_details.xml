@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white_background"
+    tools:context=".presentation.carddetails.CardDetailsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/margin_padding_size_12">
+
+
+
+            <ImageView
+                android:id="@+id/ivArrowBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_left"
+                android:layout_marginStart="@dimen/margin_padding_size_16"
+                app:layout_constraintTop_toTopOf="parent"
+                android:padding="@dimen/margin_padding_size_14"
+                android:layout_marginTop="@dimen/margin_padding_size_12"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <View
+                android:id="@+id/vCardLogoBackground"
+                android:layout_width="@dimen/card_details_logo_background_size"
+                android:layout_height="@dimen/card_details_logo_background_size"
+                android:background="@drawable/neutral0_circle_shape"
+                android:layout_marginEnd="@dimen/margin_padding_size_8"
+                app:layout_constraintEnd_toStartOf="@id/tvCardName"
+                app:layout_constraintTop_toTopOf="@id/tvCardName"
+                app:layout_constraintBottom_toBottomOf="@id/tvCardName"/>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/icons_size_20"
+                android:layout_height="@dimen/icons_size_20"
+                app:cardCornerRadius="@dimen/corner_radius_90"
+                android:backgroundTint="@null"
+                android:foregroundTint="@null"
+                android:elevation="0dp"
+                app:layout_constraintTop_toTopOf="@id/vCardLogoBackground"
+                app:layout_constraintBottom_toBottomOf="@id/vCardLogoBackground"
+                app:layout_constraintStart_toStartOf="@id/vCardLogoBackground"
+                app:layout_constraintEnd_toEndOf="@id/vCardLogoBackground">
+
+
+                <ImageView
+                    android:id="@+id/ivCardLogo"
+                    android:layout_width="@dimen/icons_size_20"
+                    android:layout_height="@dimen/icons_size_20"
+                    app:layout_constraintTop_toTopOf="@id/vCardLogoBackground"
+                    app:layout_constraintBottom_toBottomOf="@id/vCardLogoBackground"
+                    app:layout_constraintStart_toStartOf="@id/vCardLogoBackground"
+                    app:layout_constraintEnd_toEndOf="@id/vCardLogoBackground"/>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/tvCardName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Slack"
+                android:textSize="@dimen/text_size_16"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/neutral800"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivArrowBack"
+                app:layout_constraintBottom_toBottomOf="@id/ivArrowBack"/>
+
+            <TextView
+                android:id="@+id/tvCardLast4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_12"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/neutral500"
+                android:layout_marginStart="@dimen/margin_padding_size_16"
+                app:layout_constraintStart_toEndOf="@id/tvCardName"
+                app:layout_constraintTop_toTopOf="@id/tvCardName"
+                app:layout_constraintBottom_toBottomOf="@id/tvCardName"/>
+
+
+            <ImageView
+                android:id="@+id/ivCardPreview"
+                android:layout_width="300dp"
+                android:layout_height="104dp"
+                android:background="@drawable/card_preview"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="@dimen/margin_padding_size_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCardName"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/margin_padding_size_6"
+                android:background="@color/neutral200"
+                android:layout_marginHorizontal="@dimen/margin_padding_size_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/ivCardPreview"/>
+
+            <View
+                android:id="@+id/vSettingsBackground"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/card_settings_background_height"
+                android:layout_marginHorizontal="@dimen/margin_padding_size_4"
+                android:background="@drawable/neutral0_oval_shape"
+                android:layout_marginTop="@dimen/margin_padding_size_16"
+                android:elevation="@dimen/elevation_16"
+                app:layout_constraintStart_toStartOf="@id/ivCardPreview"
+                app:layout_constraintEnd_toEndOf="@id/ivCardPreview"
+                app:layout_constraintTop_toBottomOf="@id/ivCardPreview"/>
+
+            <ImageView
+                android:id="@+id/ivLock"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/card_settings_button_size"
+                android:src="@drawable/ic_lock"
+                android:elevation="@dimen/elevation_16"
+                android:padding="@dimen/margin_padding_size_10"
+                android:layout_marginTop="@dimen/margin_padding_size_4"
+                app:layout_constraintTop_toTopOf="@id/vSettingsBackground"
+                app:layout_constraintStart_toStartOf="@id/vSettingsBackground"
+                app:layout_constraintEnd_toEndOf="@id/vSettingsBackground"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lock"
+                android:elevation="@dimen/elevation_16"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/neutral800"
+                android:textSize="@dimen/text_size_12"
+                app:layout_constraintTop_toBottomOf="@id/ivLock"
+                app:layout_constraintStart_toStartOf="@id/ivLock"
+                app:layout_constraintEnd_toEndOf="@id/ivLock"/>
+
+            <ImageView
+                android:id="@+id/ivDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/card_settings_button_size"
+                android:src="@drawable/ic_details"
+                android:elevation="@dimen/elevation_16"
+                android:padding="@dimen/margin_padding_size_10"
+                android:layout_marginStart="@dimen/margin_padding_size_28"
+                android:layout_marginTop="@dimen/margin_padding_size_4"
+                app:layout_constraintTop_toTopOf="@id/vSettingsBackground"
+                app:layout_constraintStart_toStartOf="@id/vSettingsBackground"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/details"
+                android:elevation="@dimen/elevation_16"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/neutral800"
+                android:textSize="@dimen/text_size_12"
+                app:layout_constraintTop_toBottomOf="@id/ivDetails"
+                app:layout_constraintStart_toStartOf="@id/ivDetails"
+                app:layout_constraintEnd_toEndOf="@id/ivDetails"/>
+
+            <ImageView
+                android:id="@+id/ivTerminate"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/card_settings_button_size"
+                android:src="@drawable/ic_terminate_card"
+                android:elevation="@dimen/elevation_16"
+                android:padding="@dimen/margin_padding_size_10"
+                android:layout_marginEnd="@dimen/margin_padding_size_28"
+                android:layout_marginTop="@dimen/margin_padding_size_4"
+                app:layout_constraintTop_toTopOf="@id/vSettingsBackground"
+                app:layout_constraintEnd_toEndOf="@id/vSettingsBackground"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/terminate"
+                android:elevation="@dimen/elevation_16"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/neutral800"
+                android:textSize="@dimen/text_size_12"
+                app:layout_constraintTop_toBottomOf="@id/ivTerminate"
+                app:layout_constraintStart_toStartOf="@id/ivTerminate"
+                app:layout_constraintEnd_toEndOf="@id/ivTerminate"/>
+
+            <LinearLayout
+                android:id="@+id/llTransactions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_padding_size_16"
+                android:layout_marginHorizontal="@dimen/margin_padding_size_16"
+                android:background="@drawable/neutral0_oval_shape"
+                app:layout_constraintTop_toBottomOf="@id/vSettingsBackground"
+                android:layout_marginTop="@dimen/margin_padding_size_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTransactions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_card_details_transaction"
+                    tools:itemCount="12"
+                    app:layout_constraintTop_toBottomOf="@id/tvMyCards"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:layout_marginTop="@dimen/margin_padding_size_124"
+                    android:layout_marginStart="@dimen/margin_padding_size_6"
+                    android:paddingBottom="@dimen/margin_padding_size_6"/>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity"
+                android:fontFamily="@font/inter_semibold"
+                android:textSize="@dimen/text_size_16"
+                android:textColor="@color/neutral800"
+                android:layout_marginTop="@dimen/margin_padding_size_56"
+                app:layout_constraintTop_toTopOf="@id/llTransactions"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</FrameLayout>
